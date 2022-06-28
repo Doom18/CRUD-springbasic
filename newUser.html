@@ -1,0 +1,29 @@
+<html lang="en" xmlns:th="http:www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Table</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+<h2>Add a user</h2>
+<form action:"#" th:action="@{/saveUser}" th:object="${user}" method ="POST">
+<input type="text" field="*{user.name}" name="name" placeholder="Name" class="form-control mb-4 col-4">
+<input type="text" field="*{user.mail}" name="mail" placeholder="E-mail" class="form-control mb-4 col-4">
+<button type="submit" class="btn btn-info col-2">Save User</button>
+</form>
+<hr px=3>
+<h2>Delete a user</h2>
+<form action:"#" th:action="@{/delUser}" th:object="${id}" method ="POST">
+<input type="text" field="*{id}" name="id" placeholder="ID" class="form-control mb-4 col-4">
+<button type="submit" class="btn btn-info col-2">Delete User</button>
+</form>
+<hr px=3>
+<h2>Search user</h2>
+<form action:"#" th:action="@{/searchUser}" th:object="${id}" method ="POST">
+<input type="text" field="*{id}" name="id" placeholder="ID" class="form-control mb-4 col-4">
+<button type="submit" class="btn btn-info col-2">Search</button>
+</form>
+</div>
+</body>
+</html>
